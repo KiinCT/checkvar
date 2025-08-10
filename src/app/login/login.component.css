@@ -1,0 +1,70 @@
+/* Căn chỉnh bố cục */
+div {
+  max-width: 400px;          /* Chiều rộng tối đa của khung đăng nhập */
+  margin: 0 auto;            /* Căn giữa khung đăng nhập */
+  padding: 20px;             /* Thêm khoảng cách xung quanh */
+  border: 1px solid #ddd;    /* Viền nhẹ xung quanh khung */
+  border-radius: 10px;       /* Bo tròn các góc */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+  background-color: #f9f9f9; /* Màu nền nhạt */
+}
+
+/* Tiêu đề h2 */
+h2 {
+  text-align: center;       /* Căn giữa tiêu đề */
+  font-size: 1.8rem;        /* Kích cỡ tiêu đề lớn hơn */
+  color: #4CAF50;          /* Màu xanh lá */
+  margin-bottom: 1rem;      /* Thêm khoảng cách với phần nội dung */
+}
+
+/* Nhãn (label) */
+label {
+  display: block;           /* Mỗi label được hiển thị trên một dòng riêng */
+  margin-bottom: 5px;       /* Tạo không gian giữa label và input */
+  font-size: 1rem;          /* Kích thước chữ */
+  color: #555;              /* Màu xám cho nhãn */
+}
+
+/* Trường nhập liệu (input) */
+input[type="text"], input[type="password"] {
+  width: 100%;              /* Input chiếm toàn bộ chiều ngang của div */
+  padding: 10px;            /* Tạo khoảng cách nội dung bên trong */
+  margin-bottom: 15px;      /* Khoảng cách dưới giữa các input */
+  border: 1px solid #ccc;   /* Viền màu xám nhẹ */
+  border-radius: 5px;       /* Bo tròn góc input */
+  box-sizing: border-box;   /* Đảm bảo padding không phá vỡ kích thước input */
+  font-size: 1rem;          /* Kích cỡ chữ */
+}
+
+/* Input khi được focus */
+input:focus {
+  border-color: #4CAF50;    /* Viền chuyển sang màu xanh khi focus */
+  outline: none;            /* Xóa outline mặc định của trình duyệt */
+  box-shadow: 0 0 5px #4CAF50; /* Hiệu ứng đổ bóng khi focus */
+}
+
+/* Nút đăng nhập (button) */
+button {
+  width: 100%;              /* Nút rộng bằng input */
+  padding: 10px;            /* Thêm khoảng cách bên trong nút */
+  background-color: #4CAF50; /* Màu nền xanh lá */
+  color: white;             /* Màu chữ trắng */
+  border: none;             /* Bỏ viền nút */
+  border-radius: 5px;       /* Bo tròn góc nút */
+  font-size: 1rem;          /* Kích cỡ chữ */
+  cursor: pointer;          /* Thay đổi con trỏ khi hover */
+  transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+/* Nút khi hover */
+button:hover {
+  background-color: #45a049;  /* Màu xanh lá đậm hơn khi hover */
+}
+
+/* Thông báo (p) */
+p {
+  margin-top: 10px;         /* Khoảng cách trên giữa nút và thông báo */
+  font-size: 0.9rem;        /* Giảm kích cỡ chữ */
+  color: red;               /* Màu đỏ cho thông báo lỗi */
+  text-align: center;       /* Căn giữa thông báo */
+}

@@ -1,0 +1,11 @@
+<div>
+  <h2>Customer List</h2>
+
+  <button (click)="loadCustomers()">Load Customers</button>
+
+  <pre>{{ customers | json }}</pre>
+
+  <ng-template #notLoggedIn>
+    <p>You must log in to view the customer list.</p>
+  </ng-template>
+</div>

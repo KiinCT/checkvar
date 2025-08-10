@@ -1,0 +1,49 @@
+/* Tiêu đề Customer List */
+h2 {
+  text-align: center;             /* Căn giữa tiêu đề */
+  font-size: 2rem;                /* Tăng kích cỡ chữ tiêu đề */
+  color: #4CAF50;                 /* Màu xanh lá đậm */
+  margin-bottom: 1rem;            /* Thêm khoảng cách dưới tiêu đề */
+}
+
+/* Nút Load Customers */
+button {
+  display: block;                 /* Đặt nút thành khối cho dễ căn giữa */
+  margin: 0 auto 20px;            /* Căn giữa nút và thêm khoảng cách dưới */
+  padding: 10px 20px;             /* Thêm khoảng cách nội dung trong nút */
+  background-color: #4CAF50;      /* Màu nền xanh lá */
+  color: #fff;                    /* Màu chữ trắng */
+  font-size: 1rem;                /* Kích cỡ chữ */
+  border: none;                   /* Bỏ viền nút */
+  border-radius: 5px;             /* Bo tròn góc nút */
+  cursor: pointer;                /* Hiển thị con trỏ chỉ tay khi hover */
+  transition: all 0.3s ease;      /* Hiệu ứng mờ khi hover */
+}
+
+/* Hiệu ứng hover nút Load Customers */
+button:hover {
+  background-color: #45a049;      /* Nền chuyển sang màu xanh lá đậm khi hover */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+}
+
+/* Danh sách khách hàng */
+pre {
+  background: #f8f8f8;            /* Nền xám nhạt cho vùng hiển thị JSON */
+  border: 1px solid #ddd;         /* Viền mỏng xung quanh */
+  border-radius: 5px;             /* Bo tròn khung */
+  padding: 10px;                  /* Thêm khoảng cách nội dung */
+  font-size: 1rem;                /* Dễ đọc hơn */
+  color: #333;                    /* Màu chữ xám đậm */
+  overflow-x: auto;               /* Thêm thanh cuộn ngang nếu nội dung quá dài */
+  max-width: 90%;                 /* Giới hạn chiều ngang khung JSON */
+  margin: 0 auto;                 /* Căn giữa trên trang */
+}
+
+/* Thông báo chưa đăng nhập */
+p {
+  text-align: center;             /* Căn giữa thông báo */
+  font-style: italic;             /* Chữ nghiêng */
+  color: red;                     /* Màu đỏ hiển thị thông báo lỗi */
+  font-size: 1.1rem;              /* Tăng kích cỡ chữ */
+  margin-top: 20px;               /* Thêm khoảng cách trên */
+}
