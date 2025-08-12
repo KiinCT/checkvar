@@ -1,11 +1,36 @@
-<div>
-  <h2>Customer List</h2>
-
-  <button (click)="loadCustomers()">Load Customers</button>
-
-  <pre>{{ customers | json }}</pre>
-
-  <ng-template #notLoggedIn>
-    <p>You must log in to view the customer list.</p>
-  </ng-template>
-</div>
+<h2>Customer List</h2>
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Bank Accounts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.address }}</td>
+      <td>{{ customer.phone }}</td>
+      <td>
+        <table border="1" cellpadding="4" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Account Name</th>
+              <th>Account Number</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let bank of customer.bank_accounts">
+              <td>{{ bank.bank_account_name }}</td>
+              <td>{{ bank.bank_account_number }}</td>
+              <td>{{ bank.bank_account_type }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

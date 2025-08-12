@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class LoginComponent {
   password = '';
   message = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onLogin() {
     this.authService.login(this.username, this.password).subscribe({
@@ -19,13 +20,12 @@ export class LoginComponent {
         const token = res.data?.access_token;
         if (token) {
           localStorage.setItem('access_token', token);
-          this.message = 'Login thành công!';
+          this.router.navigate(['/customers']);
         } else {
           this.message = 'Không nhận được token!';
         }
       },
-      error: (err) => {
-        console.error(err);
+      error: () => {
         this.message = 'Login thất bại!';
       }
     });
