@@ -1,4 +1,6 @@
 <h2>Customer List</h2>
+<button (click)="logout()">Logout</button>
+
 <table border="1" cellpadding="8" cellspacing="0">
   <thead>
     <tr>
@@ -9,28 +11,38 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let customer of customers">
-      <td>{{ customer.name }}</td>
-      <td>{{ customer.address }}</td>
-      <td>{{ customer.phone }}</td>
-      <td>
-        <table border="1" cellpadding="4" cellspacing="0">
-          <thead>
-            <tr>
-              <th>Account Name</th>
-              <th>Account Number</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let bank of customer.bank_accounts">
-              <td>{{ bank.bank_account_name }}</td>
-              <td>{{ bank.bank_account_number }}</td>
-              <td>{{ bank.bank_account_type }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
+    <ng-container *ngFor="let customer of customers">
+      <!-- Hàng chính -->
+      <tr (click)="toggleDetail(customer)">
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.address }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>
+          {{ customer.bank_accounts.length }} tài khoản
+        </td>
+      </tr>
+
+      <!-- Hàng chi tiết (ẩn/hiện) -->
+      <tr *ngIf="selectedCustomer && selectedCustomer.id === customer.id">
+        <td colspan="4">
+          <table border="1" cellpadding="4" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                <th>Account Name</th>
+                <th>Account Number</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let bank of customer.bank_accounts">
+                <td>{{ bank.bank_account_name }}</td>
+                <td>{{ bank.bank_account_number }}</td>
+                <td>{{ bank.bank_account_type }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </ng-container>
   </tbody>
 </table>

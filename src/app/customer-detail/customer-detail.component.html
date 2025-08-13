@@ -1,0 +1,15 @@
+<h2>Customer Detail</h2>
+<div *ngIf="customer">
+  <p><b>Name:</b> {{ customer.name }}</p>
+  <p><b>Address:</b> {{ customer.address }}</p>
+  <p><b>Phone:</b> {{ customer.phone }}</p>
+
+  <h3>Bank Accounts:</h3>
+  <ul>
+    <li *ngFor="let acc of customer.bankAccounts">
+      {{ acc.accountName }} - {{ acc.accountNumber }} - {{ acc.type }}
+    </li>
+  </ul>
+
+  <button routerLink="/customers">Back</button>
+</div>

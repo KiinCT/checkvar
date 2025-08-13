@@ -10,18 +10,21 @@ import { FormsModule } from '@angular/forms';
 import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { AuthInterceptor } from './auth.interceptor';
+import { AuthGuard } from './auth.guard';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'customers', component: CustomerlistComponent }
+  { path: 'customers', component: CustomerlistComponent, canActivate: [AuthGuard] } // Bảo vệ route bằng AuthGuard
 ];
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CustomerlistComponent
+    CustomerlistComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,
